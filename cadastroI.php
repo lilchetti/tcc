@@ -84,11 +84,15 @@ $p = new usuarios("tcc","localhost","root","");
 
     </script>
     </head>
-
+    <header>
+        <!-- add codigo padrão de cabeçalho -->
+    </header>
 
   <body>
     <?php
-    if(isset($_POST['nome']))
+   
+        
+    if(isset($_POST['cpf']))
     {
         $nome = addslashes($_POST['nome']);
         $cpf = addslashes($_POST['cpf']);
@@ -143,6 +147,8 @@ $p = new usuarios("tcc","localhost","root","");
 
     }
 
+        
+
 
     ?>
         <h1> Cadastro </h1> 
@@ -179,7 +185,6 @@ $p = new usuarios("tcc","localhost","root","");
                 <option value="">Selecione</option>
                 <option name = "M" value="M"> Masculino </option>
                 <option name = "F" value="F"> Feminino</option>
-                <option name = "0" value="0"> Não binario</option>
 
             <br><label for="email"> Email </label>
             <input type="email" name="email" id="email" placeholder="Ex: kiyote1342@gmail.com" >
@@ -216,5 +221,9 @@ $p = new usuarios("tcc","localhost","root","");
 </p>
 
 </form>
+   
+    <footer>
+         <!-- add codigo padrão de cabeçalho -->
+    </footer>
 </body>
 </html>        
