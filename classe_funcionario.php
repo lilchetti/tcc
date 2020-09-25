@@ -1,8 +1,13 @@
+<!-- Esta pagina esta ligada a pagina 
+	adm.php e faz a conexao com a pagina conexao.php, busca os dados,deleta e cadastra-->
 <?php
 
-class Funcionarios{
+
+class Funcionarios{ 
 	private $pdo;
+	
 	//conexão com o banco
+	
 	public function __construct($dbname,$host,$user,$senha)
 	{
 		try{
@@ -29,7 +34,7 @@ class Funcionarios{
 
 	}
 
-	public function cadastrarPessoas($nome,$contratacao,$nasc,$cargo,$salario,$cpf,$rg,$tel,$email,$senha)
+	public function cadastrarPessoas($nome,$contratacao,$nasc,$cargo,$salario,$cpf,$rg,$tel,$email,$senha) #cadastrar funcionario
 	{
 		#verificar se o email já está cadastrado
 		$cmd = $this->PDO->prepare("SELECT id_fun FROM funcionarios WHERE email = :e");
@@ -58,12 +63,7 @@ class Funcionarios{
 		}
 	}
 
-	public function excluir($id_fun)
-	{
-		$cmd = $this->PDO->prepare("DELETE FROM funcionarios Where id_fun = :id_fun");
-		$cmd->bindValue(":id_fun",$id_fun);
-		$cmd->execute();
-	}
+	
 }
 
 
